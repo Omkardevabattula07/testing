@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Superuser Dashboard</title>
+</head>
+<body>
+    {% csrf_token %}
+    <h1>Welcome superuser {{user.username}}</h1>
+    <a href="{% url 'logout' %}">Logout</a>
+    {% for user in users %}
+   <p> {{user.email}}
+    {{user.username}}
+    {{user.userprofile.bio}}
+</p>
+    {% endfor %}
+</body>
+</html>

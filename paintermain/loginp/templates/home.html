@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <style>
+        div{
+            text-align:left
+            padding:40px;
+
+        }
+        body{
+            background-color:greenyellow;
+        }
+        button{
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Home Page</h1>
+    <div>
+    <button ><a href="{% url 'login' %}">Login</a></button>
+   <button> <a href='{% url "register" %}'>register</a></button>
+    </div>
+</body>
+</html>

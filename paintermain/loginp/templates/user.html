@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Dashboard</title>
+    <style>
+        #logout{
+            background-color:red;
+            text-align:center;
+        }
+        #button{
+            padding:10px;
+            height:100px;
+            width:200px;
+            background-color:yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome {{user.username}}</h1>
+    <h1>{{user.userprofile.bio}}</h1>
+    <img src="{{userprofile.profile_pic.url}}}" alt="Uploaded Image">
+
+    <h1>The users in the website</h1>
+    {% csrf_token %}
+    <a id='logout'href="{% url 'logout' %}">Logout</a>
+    <div>
+    {% for user in users %}
+    <button id="button">
+    <p>{{user.username}}</p>
+   <p> {{user.email}}  </p>
+    <p>{{user.userprofile.bio}}</p>
+    <img src="{{user.profile_pic.url}}}" alt="Uploaded Image">
+
+    </button><br>
+    {% endfor %}
+    </div>
+</body>
+</html>
